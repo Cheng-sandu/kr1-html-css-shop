@@ -59,25 +59,25 @@
         <div class="products-grid">
           <article class="product-card">
             <div class="product-image" aria-hidden="true"></div>
-            <h3>Брелок</h3>
+            <h3>Брелок Сяо</h3>
             <p class="price">200 ₽</p>
             <button class="btn-small">В корзину</button>
           </article>
           <article class="product-card">
             <div class="product-image" aria-hidden="true"></div>
-            <h3>Крушка</h3>
+            <h3>Крушка Сяо</h3>
             <p class="price">500 ₽</p>
             <button class="btn-small">В корзину</button>
           </article>
           <article class="product-card">
             <div class="product-image" aria-hidden="true"></div>
-            <h3>Кукла</h3>
+            <h3>Кукла Сяо</h3>
             <p class="price">2 500 ₽</p>
             <button class="btn-small">В корзину</button>
           </article>
           <article class="product-card">
             <div class="product-image" aria-hidden="true"></div>
-            <h3>Акриловый Стенд</h3>
+            <h3>Акриловый Стенд Сяо</h3>
             <p class="price">1 500 ₽</p>
             <button class="btn-small">В корзину</button>
           </article>
@@ -112,5 +112,98 @@
     </div>
   </footer>
 
+<div class="modal" id="orderModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+  <div class="modal-overlay" data-close-modal></div>
+
+  <div class="modal-content">
+    <button type="button" class="modal-close" data-close-modal aria-label="Закрыть окно">&times;</button>
+
+    <h2 id="orderModalTitle">Оформление заявки</h2>
+    <p class="modal-subtitle">Оставьте свои данные — мы свяжемся с вами.</p>
+
+    <form id="orderForm" novalidate>
+      <input type="hidden" name="product" id="productField" value="">
+
+      <div class="form-group">
+        <label for="name">Имя <span class="required">*</span></label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          minlength="2"
+          maxlength="50"
+          placeholder=" "
+          autocomplete="name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail <span class="required">*</span></label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder=" "
+          autocomplete="email">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Телефон <span class="required">*</span></label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          required
+          pattern="\+?[0-9\s\-\(\)]{10,20}"
+          placeholder="+7 "
+          autocomplete="tel">
+      </div>
+
+      <div class="form-group">
+        <label for="date">Дата <span class="required">*</span></label>
+        <input
+          type="date"
+          id="date"
+          name="date"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="topic">Тема / товар <span class="required">*</span></label>
+        <select id="topic" name="topic" required>
+          <option value="">— выберите товар —</option>
+          <option value="Брелок Сяо">Брелок Сяо</option>
+          <option value="Крушка Сяо">Крушка Сяо</option>
+          <option value="Кукла Сяо">Кукла Сяо</option>
+          <option value="Акриловый Стенд Сяо">Акриловый Стенд Сяо</option>
+          <option value="Другое">Другое</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="comment">Комментарий</label>
+        <textarea
+          id="comment"
+          name="comment"
+          rows="3"
+          maxlength="500"
+          placeholder="Дополнительная информация…"></textarea>
+      </div>
+
+      <div class="form-group form-checkbox">
+        <label>
+          <input type="checkbox" name="consent" id="consent" required>
+          Я согласен на обработку персональных данных
+          <span class="required">*</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn-submit">Отправить заявку</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
 </body>
 </html>
